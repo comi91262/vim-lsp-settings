@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/sh
 
 set -e
 
@@ -9,6 +9,5 @@ if [ ! -f package.json ]; then
   echo '{"name": ""}' >package.json
 fi
 
-npm install "graphql"
 npm install "graphql-language-service-cli"
 ln -s "./node_modules/.bin/graphql-lsp" graphql-language-server

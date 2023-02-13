@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/sh
 
 set -e
 
@@ -10,11 +10,10 @@ curl -L "$url" -o "$asset"
 unzip "$asset"
 rm "$asset" \[Content_Types\].xml extension.vsixmanifest
 
-
 chmod +x extension/dist/server/index.js
 
 cat <<EOF >tailwindcss-intellisense
-#!/usr/bin/env bash
+#!/bin/sh
 
 DIR=\$(cd \$(dirname \$0); pwd)
 node \$DIR/extension/dist/server/index.js \$*

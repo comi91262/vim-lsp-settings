@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/sh
 
 set -e
 
@@ -20,10 +20,10 @@ unzip "$filename"
 rm "$filename"
 
 cat <<EOF >analysis-server-dart-snapshot
-#!/usr/bin/env bash
+#!/bin/sh
 
 DIR=\$(cd \$(dirname \$0); pwd)/dart-sdk
-\$DIR/bin/dart \$DIR/bin/snapshots/analysis_server.dart.snapshot --lsp \$*
+\$DIR/bin/dart language-server \$*
 EOF
 
 chmod +x analysis-server-dart-snapshot
